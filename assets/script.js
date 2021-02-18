@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Special characters options created
-const specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
+var specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Write password to the #password input
 function writePassword() {
@@ -20,13 +20,35 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
     var passwordLength = prompt("Please enter the number of characters you want in your password. It must have at least 8 and no more than 128.");
 
-    var upperCases = confirm("Click OK if you want upper case letters in your password?");
+    var characterTypes = prompt("Please enter each caracter type you would like in your password (upper case, lower case, numeric, special characters).");
 
-    var lowerCases = confirm("Click OK if you want lower case letters in your password?");
+   
 
-    var numbers = confirm("ClickOK if you want numbers in your password?");
+    //To generate criteria chosen
+    var functionArray = {
 
-    var special = confirm("Click OK if you want special characters in your password?");
+      getUpperCase: function() {
+        return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+      },
+
+      getLowerCase: function() {
+        return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+      },
+
+      getNumbers: function() {
+        return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+      },
+
+      getSpecialCharacters: function() {
+        return String.fromCharCode(Math.floor(Math.random() * specialCharacters.length));
+      }
+    };
+
+
+
+    }
+
+
 
     
 }
